@@ -8,9 +8,9 @@ export default function Navigations (){
 
     return(
        <>
-         <Link to="./books">Home</Link>
-         <Link to="./login">Login</Link>
-         <Link to="./register">Sign Up</Link>
+         <Link to="/">Home</Link>
+         <Link to="/login">Login</Link>
+         <Link to="/register">Sign Up</Link>
          <input
             type="text"
             placeholder="Search here"
