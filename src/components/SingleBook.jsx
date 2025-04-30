@@ -12,7 +12,6 @@ export default function SingleBook(){
             const res = await fetch (`https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books/${id}`)
             const result = await res.json();
             setSingleBook(result)
-            console.log(result)
         }
         getSingleBook();
     }, [])
