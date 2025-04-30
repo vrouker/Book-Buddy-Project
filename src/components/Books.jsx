@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Books({setSingleBook}){
+export default function Books(){
     const [allBooks, setAllBooks] = useState([]);
 
     const navigate = useNavigate();
@@ -16,23 +16,21 @@ export default function Books({setSingleBook}){
             setAllBooks(results);
         } 
         getAllBooks();
-        console.log(allBooks);
-    },[setAllBooks])
-
-    const handleClick =(book)=>{
-        setSingleBook(book);
-        navigate("/books/:id")
+    },[])
+    
+    const getDetails = (bookId)=>{
+        navigate (`/books/${bookId}`)
     }
 
     return(
         <>
-            {
+            {allBooks && 
             allBooks.map((book)=>
                 <div key={book.id}>
                     <img src={book.coverimage}/>
                     <h2>{book.title}</h2>
-                    <h3>{book.available}</h3>
-                    <button onClick={handleClick}>More details!</button>
+                    <h2>{book.available}</h2>
+                    <button onClick={()=>getDetails(book.id)}>More details!</button>
                 </div>
             )}
         </>
