@@ -4,6 +4,10 @@ import { Routes, Route, Link } from 'react-router-dom'
 import Navigations from './components/Navigations'
 import Books from './components/Books'
 import SingleBook from './components/SingleBook'
+import Register from './components/Register'
+
+
+
 
 function App() {
   const [token, setToken] = useState(null)
@@ -24,7 +28,7 @@ function App() {
 
           <Route path="/login" element={<h1>Login page goes heres!</h1>}/>
 
-          <Route path="/register" element={<h1>Register form goes here</h1>}/>
+          <Route path="/register" element={<Register/>}/>
         </Routes>
       </div>
     </>
