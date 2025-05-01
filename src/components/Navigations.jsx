@@ -3,8 +3,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Navigations (){
+export default function Navigations ({token, setToken}){
 
+    const handleSignOut = ()=>{
+        setToken("")
+        localStorage.clear(token)
+      }
 
     return(
        <>
@@ -15,6 +19,7 @@ export default function Navigations (){
             type="text"
             placeholder="Search here"
             />
+        <button onClick={handleSignOut}>Log Out</button>
        
        </> 
     )
