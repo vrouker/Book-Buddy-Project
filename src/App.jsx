@@ -21,7 +21,7 @@ function App() {
   },[token])
 
   useEffect(()=>{
-    const storedToken = localStorage.getItem("token");
+    const storedToken = localStorage.getItem("token")
     if (storedToken){
       setToken(storedToken)
     }
@@ -39,7 +39,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Books/>}/>
 
-          <Route path="/books/:id" element={<SingleBook singleBook={singleBook} setSingleBook={setSingleBook}/>}/>
+          <Route path="/books/:id" element={<SingleBook singleBook={singleBook} setSingleBook={setSingleBook} token={token}/>}/>
 
           <Route path="/account" element={<h1>User account goes here!</h1>}/>
 
