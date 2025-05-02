@@ -7,6 +7,7 @@ export default function Account({reservedBooks, setReservedBooks}){
     const token = localStorage.getItem("token")
     const [refresh, setRefresh] = useState(false)
     const navigate = useNavigate();
+    const [userDetails, setUserDetails] = useState({})
 
     
     useEffect(()=>{
@@ -31,9 +32,29 @@ export default function Account({reservedBooks, setReservedBooks}){
             console.log(error)
         }
     }
+
+    useEffect(()=>{
+        async function getUserDetails () {
+        try{
+            const response = await fetch("https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/me", {
+                headers:{Authorization:  `Bearer ${token}`}
+            })
+            const results = await response.json();
+            setUserDetails(results)
+            console.log(results)
+        }catch (error){
+            console.log(error)
+        }
+        }
+        getUserDetails();
+    },[])
+    
     return(
         <>
+            <div>
             <h1>Acount Info</h1>
+            </div>
+
 
             <>
             {
