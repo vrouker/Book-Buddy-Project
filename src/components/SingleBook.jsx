@@ -2,11 +2,10 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-export default function SingleBook(){
+export default function SingleBook({reservedBooks, setReservedBooks}){
     const {id} = useParams();
 
     const [singleBook, setSingleBook] = useState({})
-    const [reservedBooks, setReservedBooks] = useState([])
 
     useEffect(()=>{
         async function getSingleBook (){
@@ -21,7 +20,6 @@ export default function SingleBook(){
 
     async function handleReserve (){
         try{
-            console.log(singleBook);
             const response = await fetch ("https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/reservations",{
                 method:"POST",
                 headers: {'Content-type':'application/json',

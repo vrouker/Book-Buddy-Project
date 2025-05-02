@@ -6,6 +6,7 @@ import Books from './components/Books'
 import SingleBook from './components/SingleBook'
 import Register from './components/Register'
 import Login from './components/Login'
+import Account from './components/Account'
 
 
 
@@ -13,6 +14,7 @@ import Login from './components/Login'
 function App() {
   const [token, setToken] = useState(null)
   const [singleBook, setSingleBook] = useState({})
+  const [reservedBooks, setReservedBooks] = useState([])
 
   useEffect(()=>{
     if (token) {
@@ -39,9 +41,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Books/>}/>
 
-          <Route path="/books/:id" element={<SingleBook singleBook={singleBook} setSingleBook={setSingleBook} token={token}/>}/>
+          <Route path="/books/:id" element={<SingleBook singleBook={singleBook} setSingleBook={setSingleBook} token={token} setReservedBooks={setReservedBooks}/>}/>
 
-          <Route path="/account" element={<h1>User account goes here!</h1>}/>
+          <Route path="/account" element={<Account reservedBooks={reservedBooks} setReservedBooks={setReservedBooks}/>}/>
 
           <Route path="/login" element={<Login token={token} setToken={setToken}/>}/>
 
