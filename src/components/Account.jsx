@@ -48,11 +48,14 @@ export default function Account({reservedBooks, setReservedBooks}){
         }
         getUserDetails();
     },[])
-    
+
     return(
         <>
             <div>
             <h1>Acount Info</h1>
+            <p>First Name: {userDetails.firstname}</p>
+            <p>Last Name: {userDetails.lastname}</p>
+            <p>Email: {userDetails.email}</p>
             </div>
 
 
