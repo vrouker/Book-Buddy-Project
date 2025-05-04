@@ -7,14 +7,21 @@ import SingleBook from './components/SingleBook'
 import Register from './components/Register'
 import Login from './components/Login'
 import Account from './components/Account'
+import SearchBar from './components/SearchBar'
 
 
 
 
 function App() {
   const [token, setToken] = useState(null)
+  const [allBooks, setAllBooks] = useState([]);
   const [singleBook, setSingleBook] = useState({})
   const [reservedBooks, setReservedBooks] = useState([])
+  const [data, setData] = useState ([allBooks])
+  const [searchResults, setSearchResults] = useState(data)
+
+
+
 
   useEffect(()=>{
     if (token) {
@@ -29,7 +36,17 @@ function App() {
     }
   }, [])
 
-  
+//Search input does not work....need outside help.
+  const handleSearchInput = (searchTerm)=>{
+    const lowerCaseSearch = searchTerm.toLowerCase();
+    if (searchTerm) {
+      const filteredResults = data.filter((item)=>
+        item.toLowerCase().includes(lowerCaseSearch));
+    setSearchResults(filteredResults);
+    } else {
+      setSearchResults(data)
+    }
+  }
 
 
   return (
@@ -38,8 +55,12 @@ function App() {
 
       <div id="routeSection">
         <Navigations className="navBar" token={token} setToken={setToken}/>
+
+        <SearchBar onSearch={handleSearchInput}/>
+
+
         <Routes>
-          <Route path="/" element={<Books/>}/>
+          <Route path="/" element={<Books allBooks={allBooks} setAllBooks={setAllBooks}/>}/>
 
           <Route path="/books/:id" element={<SingleBook singleBook={singleBook} setSingleBook={setSingleBook} token={token} setReservedBooks={setReservedBooks}/>}/>
 

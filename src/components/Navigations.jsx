@@ -8,6 +8,8 @@ export default function Navigations ({token, setToken}){
         localStorage.clear(token)
       }
 
+      
+
     return(
        <>
        {
