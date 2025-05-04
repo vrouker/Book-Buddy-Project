@@ -49,7 +49,7 @@ export default function Login({setToken}){
                     />
                 </label>
                 <br/><br/>
-                <button>Log In!</button>
+                <button className="button">Log In!</button>
 
             </form>
            } 

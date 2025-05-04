@@ -72,7 +72,7 @@ export default function Register(){
                         />
                 </label>
                     <br/><br/>
-                <button>Submit</button>
+                <button className="button">Submit</button>
 
             </form>
         }

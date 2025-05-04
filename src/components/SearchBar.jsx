@@ -11,7 +11,7 @@ export default function SearchBar({onSearch}){
     return(
 
         <>
-        <input
+        <input className="searchBar"
             type = "text"
             placeholder="Begin typing to search"
             value={searchTerm}

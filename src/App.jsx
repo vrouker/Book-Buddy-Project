@@ -1,5 +1,5 @@
 import { useState, useEffect} from 'react'
-import bookLogo from './assets/books.png'
+import MrHop from './assets/MrHop.png'
 import { Routes, Route, Link } from 'react-router-dom'
 import Navigations from './components/Navigations'
 import Books from './components/Books'
@@ -51,14 +51,17 @@ function App() {
 
   return (
     <>
-      <h1><img id='logo-image' src={bookLogo}/>Library App</h1>
+      <div className="headerBar">
+      <h1 className="headerBar"><img id='logo-image' src={MrHop}/>Mr. Hop's Library</h1>
+      <Navigations className="navBar" token={token} setToken={setToken}/>
+      </div>
+
+      <div>
+        <SearchBar onSearch={handleSearchInput} className="searchBar"/>
+      </div>
+
 
       <div id="routeSection">
-        <Navigations className="navBar" token={token} setToken={setToken}/>
-
-        <SearchBar onSearch={handleSearchInput}/>
-
-
         <Routes>
           <Route path="/" element={<Books allBooks={allBooks} setAllBooks={setAllBooks}/>}/>
 
@@ -71,6 +74,7 @@ function App() {
           <Route path="/register" element={<Register/>}/>
         </Routes>
       </div>
+      
     </>
   )
 }

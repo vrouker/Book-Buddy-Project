@@ -49,7 +49,7 @@ export default function Account({reservedBooks, setReservedBooks}){
 
     return(
         <>
-            <div>
+            <div className="accountInfo">
             <h1>Acount Info</h1>
             <p>First Name: {userDetails.firstname}</p>
             <p>Last Name: {userDetails.lastname}</p>
@@ -60,10 +60,10 @@ export default function Account({reservedBooks, setReservedBooks}){
             <>
             {
                 reservedBooks && reservedBooks.map((reservedBook)=>
-                    <div key={reservedBook.id}>
+                    <div key={reservedBook.id} className="singleBookCard">
                         <h2>{reservedBook.title} by {reservedBook.author}</h2>
-                        <img src={reservedBook.coverimage}/>
-                        <button onClick={()=>handleRemove(reservedBook.id)}>Remove Reservation</button>
+                        <img src={reservedBook.coverimage} className="detailCover"/>
+                        <button onClick={()=>handleRemove(reservedBook.id)} className="button">Remove Reservation</button>
                     </div>
                 )
             }

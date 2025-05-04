@@ -48,17 +48,17 @@ export default function SingleBook({reservedBooks, setReservedBooks}){
                 <div className="singleBookCard">
                 <h1>{singleBook.title}</h1>
                 <h2>{singleBook.author}</h2>
-                <img src={singleBook.coverimage}/>
+                <img src={singleBook.coverimage} className="detailCover"/>
                 <p>{singleBook.description}</p>
                 <p>{singleBook.available}</p>
-                <button onClick={handleReserve}>Reserve Book</button>
+                <button onClick={handleReserve} className="button">Reserve Book</button>
             </div>
             :
             <div>
                 <div className="singleBookCard">
                 <h1>{singleBook.title}</h1>
                 <h2>{singleBook.author}</h2>
-                <img src={singleBook.coverimage}/>
+                <img src={singleBook.coverimage} className="detailCover"/>
                 <p>{singleBook.description}</p>
                 <p>{singleBook.available}</p>
                 </div>
