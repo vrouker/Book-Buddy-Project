@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Books(){
-    const [allBooks, setAllBooks] = useState([]);
-
+export default function Books({allBooks, setAllBooks}){
     const navigate = useNavigate();
     
     useEffect(()=>{
