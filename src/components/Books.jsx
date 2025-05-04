@@ -20,15 +20,23 @@ export default function Books({allBooks, setAllBooks}){
 
     return(
         <>
+        <div>
+        <h1 className="welcomeMessage">Welcome to Mr. Hop's Library!</h1>
+        <h2 className="mainPageMessage">Browse our book selection below or search to find your next great read!</h2>
+        </div>
+        
+        <div className="AllBookCards">
+
             {allBooks && 
             allBooks.map((book)=>
                 <div key={book.id} className="BookCard">
                     <img src={book.coverimage} className="bookCardImage"/>
                     <h2>{book.title}</h2>
                     <h2>{book.available}</h2>
-                    <button onClick={()=>getDetails(book.id)}>More details!</button>
+                    <button onClick={()=>getDetails(book.id)} className="button">More details!</button>
                 </div>
             )}
+            </div>
         </>
     )
 }

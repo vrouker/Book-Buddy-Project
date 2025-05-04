@@ -31,16 +31,18 @@ export default function Register(){
 
     return(
         <>
+        <div className="registerForm">
+
         <h2>Sign Up Here!</h2>
         {
-            <form className="RegisterForm" onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <label>
                     First Name: 
                         <input
                             name="firstName"
                             onChange = {(e)=>setFirstName(e.target.value)}
                             value={firstName}
-                        />
+                            />
                 </label>
                     <br/><br/>
                 <label>
@@ -49,17 +51,18 @@ export default function Register(){
                             name="lastName"
                             onChange={(e)=>setLastName(e.target.value)}
                             value={lastName}
-                        />
+                            />
                 </label>
                     <br/><br/>
                 <label>
                     Email:
                         <input
+                            className="emailInput"
                             name="email"
                             required
                             onChange={(e)=>setEmail(e.target.value)}
                             value={email}
-                        />
+                            />
                 </label>
                     <br/><br/>
                 <label>
@@ -69,13 +72,14 @@ export default function Register(){
                             required
                             onChange={(e)=>setPassword(e.target.value)}
                             value={password}
-                        />
+                            />
                 </label>
                     <br/><br/>
-                <button>Submit</button>
+                <button className="button">Submit</button>
 
             </form>
         }
+        </div>
         </>
     )
 }

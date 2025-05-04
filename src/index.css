@@ -1,13 +1,120 @@
-body {
-  font-family: Georgia, serif;
-  background-color: #f8f8f8;
-  margin: 0;
-  padding: 0;
-}
-
 #logo-image {
-  width: 30px;
-  margin-right: 10px;
+  width: 64px;
+  margin-right: 5px;
 }
 
 /* Add your own custom styles here */
+
+html{
+  background-color: #CEB793;
+}
+
+.headerBar{
+  width:100%;
+  background-color: #8A584C;
+  font-family: cursive;
+  display:inline-grid;
+  grid-template-columns: 2fr 5fr;
+  column-gap: auto;
+  align-items: center;
+}
+
+.navLink{
+  margin:5%;
+  font-family: cursive;
+  font-weight: bold;
+  font-size:18px;
+  color: black;
+}
+
+.navBar{
+  display:flex;
+  justify-content: right;
+}
+
+.welcomeMessage, .mainPageMessage{
+  font-family: cursive;
+}
+
+.BookCard{
+width:75%;
+border-radius: 15px;
+background-color: #F5EACF;
+border-style: solid;
+border-color: #8A584C;
+border-width: 2%;
+padding:15%;
+}
+
+.bookCardImage{
+  width:85%;
+}
+
+.AllBookCards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding:5%;
+  column-gap: 25px;
+  row-gap: 25px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size:85%;
+  justify-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+.button{
+  font-weight:bold;
+  margin:5%;
+  border-radius: 25px;
+  background-color: #CEB793;
+  color:#8A584C;
+  border-color: #8A584C;
+}
+
+.singleBookCard{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: #85865F;
+  border-radius: 10px;
+  text-align: center;
+  margin-left:25%;
+  margin-right:25%;
+  padding:2%;
+  font-weight:bold;
+}
+
+.detailCover{
+  width:50%;
+}
+
+.accountInfo{
+  padding-left:15px;
+  text-align: center;
+  color: #4F583D;
+  font-weight: bold;
+  font-size:larger;
+
+}
+
+.searchBar{
+  width:50%;
+  text-align: center;
+  align-items: center;
+  margin-top:2%;
+  margin-bottom:2%;
+  margin-left:25%;
+}
+
+.logInForm{
+  font-family: cursive;
+  text-align:center;
+}
+
+.registerForm{
+  font-family: cursive;
+  text-align: center;
+}
+
+.emailInput{
+  width:200px;
+}

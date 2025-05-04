@@ -11,9 +11,9 @@ export default function SearchBar({onSearch}){
     return(
 
         <>
-        <input
+        <input className="searchBar"
             type = "text"
-            placeholder="Begin typing to search"
+            placeholder="Begin typing to search for a book"
             value={searchTerm}
             onChange = {handleSearch}
         />

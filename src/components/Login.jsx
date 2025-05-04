@@ -27,16 +27,19 @@ export default function Login({setToken}){
     return(
 
         <>
+        <div className="logInForm">
+            <h2>Log in here!</h2>
            {
-            <form onSubmit={handleSubmit}>
+               <form onSubmit={handleSubmit}>
                 <label>
                     Email: 
                     <input
+                        className="emailInput"
                         name="email"
                         required
                         onChange={(e)=>setEmail(e.target.value)}
                         value={email}
-                    />
+                        />
                 </label>
                 <br/><br/>
                 <label>
@@ -46,13 +49,14 @@ export default function Login({setToken}){
                         required
                         onChange={(e)=>setPassword(e.target.value)}
                         value={password}
-                    />
+                        />
                 </label>
                 <br/><br/>
-                <button>Log In!</button>
+                <button className="button">Log In!</button>
 
             </form>
            } 
+           </div>
         </>
     )
 }

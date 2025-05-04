@@ -14,24 +14,16 @@ export default function Navigations ({token, setToken}){
        <>
        {
             token ?
-        <div>
-            <Link to="/">Home</Link>
-            <Link to="/account">My Account</Link>
-            <input
-            type="text"
-            placeholder="Search here"
-            />
-            <button onClick={handleSignOut}>Log Out</button>
+        <div className="navBar">
+            <Link to="/" className="navLink">Home</Link>
+            <Link to="/account" className="navLink">My Account</Link>
+            <button onClick={handleSignOut} className="button">Log Out</button>
         </div>
         :
-        <div>
-            <Link to="/">Home</Link>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Sign Up</Link>
-            <input
-            type="text"
-            placeholder="Search here"
-            />
+        <div className="navBar">
+            <Link to="/" className="navLink">Home</Link>
+            <Link to="/login" className="navLink">Login</Link>
+            <Link to="/register" className="navLink">Sign Up</Link>
         </div>
        }
        
