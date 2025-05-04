@@ -63,6 +63,7 @@ export default function Account({reservedBooks, setReservedBooks}){
                     <div key={reservedBook.id} className="singleBookCard">
                         <h2>{reservedBook.title} by {reservedBook.author}</h2>
                         <img src={reservedBook.coverimage} className="detailCover"/>
+                        <br/><br/>
                         <button onClick={()=>handleRemove(reservedBook.id)} className="button">Remove Reservation</button>
                     </div>
                 )

@@ -1,6 +1,6 @@
 #logo-image {
   width: 64px;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 /* Add your own custom styles here */
@@ -12,7 +12,7 @@ html{
 .headerBar{
   width:100%;
   background-color: #8A584C;
-  font-family:cursive;
+  font-family: cursive;
   display:inline-grid;
   grid-template-columns: 2fr 5fr;
   column-gap: auto;
@@ -21,7 +21,8 @@ html{
 
 .navLink{
   margin:5%;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: cursive;
+  font-weight: bold;
   font-size:18px;
   color: black;
 }
@@ -63,6 +64,7 @@ padding:15%;
 }
 
 .button{
+  font-weight:bold;
   margin:5%;
   border-radius: 25px;
   background-color: #CEB793;
@@ -78,6 +80,7 @@ padding:15%;
   margin-left:25%;
   margin-right:25%;
   padding:2%;
+  font-weight:bold;
 }
 
 .detailCover{
@@ -86,7 +89,11 @@ padding:15%;
 
 .accountInfo{
   padding-left:15px;
+  text-align: center;
   color: #4F583D;
+  font-weight: bold;
+  font-size:larger;
+
 }
 
 .searchBar{
@@ -98,3 +105,16 @@ padding:15%;
   margin-left:25%;
 }
 
+.logInForm{
+  font-family: cursive;
+  text-align:center;
+}
+
+.registerForm{
+  font-family: cursive;
+  text-align: center;
+}
+
+.emailInput{
+  width:200px;
+}
