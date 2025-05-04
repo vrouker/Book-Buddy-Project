@@ -40,7 +40,6 @@ export default function Account({reservedBooks, setReservedBooks}){
             })
             const results = await response.json();
             setUserDetails(results)
-            console.log(results)
         }catch (error){
             console.log(error)
         }

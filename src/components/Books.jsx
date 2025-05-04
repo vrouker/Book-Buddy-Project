@@ -25,7 +25,7 @@ export default function Books(){
             {allBooks && 
             allBooks.map((book)=>
                 <div key={book.id} className="BookCard">
-                    <img src={book.coverimage}/>
+                    <img src={book.coverimage} className="bookCardImage"/>
                     <h2>{book.title}</h2>
                     <h2>{book.available}</h2>
                     <button onClick={()=>getDetails(book.id)}>More details!</button>
