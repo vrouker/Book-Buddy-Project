@@ -19,7 +19,7 @@ function App() {
 
 
 
-
+//sets token in local storage to be used in the other components
   useEffect(()=>{
     if (token) {
       localStorage.setItem("token", token)

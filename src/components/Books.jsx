@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 export default function Books({allBooks, setAllBooks}){
     const navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState("")
-    
+
+//Function fetches a list of all books from the API
     useEffect(()=>{
         const getAllBooks = async()=>{
             const res = await fetch ("https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books")
@@ -15,11 +16,12 @@ export default function Books({allBooks, setAllBooks}){
         getAllBooks();
     },[])
     
+//Function navigates to the single book page when the "details" button is clicked
     const getDetails = (bookId)=>{
         navigate (`/books/${bookId}`)
     }
 
-
+//Function filters the books based on the search term provided by the user in the search bar input
     const filteredBooks = allBooks.filter((book)=>book.title.toLowerCase().includes(searchTerm.toLowerCase()))
 
 
@@ -41,7 +43,8 @@ export default function Books({allBooks, setAllBooks}){
         
         <div className="AllBookCards">
 
-            {filteredBooks && 
+        {//Maps over the list of filtered books based on the user's search input
+            filteredBooks && 
             filteredBooks.map((book)=>
                 <div key={book.id} className="BookCard">
                     <img src={book.coverimage} className="bookCardImage"/>

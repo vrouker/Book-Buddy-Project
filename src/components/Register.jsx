@@ -7,6 +7,7 @@ export default function Register(){
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
+//Function adds the user's details to the API and attaches a token to the user to be used when logged in
     async function handleSubmit (event){
         event.preventDefault();
         try{

@@ -8,7 +8,7 @@ export default function Account({reservedBooks, setReservedBooks}){
     const navigate = useNavigate();
     const [userDetails, setUserDetails] = useState({})
 
-    
+//Function fetches the list of reserved books that match the user's token from the API
     useEffect(()=>{
         const getReservedBooks = async () => {
             const response = await fetch ("https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/reservations", {
@@ -20,6 +20,8 @@ export default function Account({reservedBooks, setReservedBooks}){
         getReservedBooks();
     }, [refresh])
 
+
+//Function removes the reserved book from the user's information in the API
     async function handleRemove(id){
         try{
             const response = await fetch (`https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/reservations/${id}`, {
@@ -32,6 +34,8 @@ export default function Account({reservedBooks, setReservedBooks}){
         }
     }
 
+
+//Function fetches the user's details from the API to be displayed below
     useEffect(()=>{
         async function getUserDetails () {
         try{
@@ -58,7 +62,7 @@ export default function Account({reservedBooks, setReservedBooks}){
 
 
             <>
-            {
+            {//Maps over the reserved books to be displayed on the account page of the user
                 reservedBooks && reservedBooks.map((reservedBook)=>
                     <div key={reservedBook.id} className="singleBookCard">
                         <h2>{reservedBook.title} by {reservedBook.author}</h2>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Navigations ({token, setToken}){
 
+//function handles the signout of the user on all pages
     const handleSignOut = ()=>{
         setToken("")
         localStorage.clear(token)
@@ -12,7 +13,7 @@ export default function Navigations ({token, setToken}){
 
     return(
        <>
-       {
+       { //navbar checks for a user as "signed in" before displaying the parts
             token ?
         <div className="navBar">
             <Link to="/" className="navLink">Home</Link>

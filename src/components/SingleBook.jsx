@@ -6,6 +6,9 @@ export default function SingleBook({reservedBooks, setReservedBooks}){
 
     const [singleBook, setSingleBook] = useState({})
 
+    const token = localStorage.getItem("token")
+
+//API call to get the information on a single book
     useEffect(()=>{
         async function getSingleBook (){
             const res = await fetch (`https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books/${id}`)
@@ -15,8 +18,8 @@ export default function SingleBook({reservedBooks, setReservedBooks}){
         getSingleBook();
     }, [])
 
-    const token = localStorage.getItem("token")
 
+//Function updates the API to show that the user reserved the book by id
     async function handleReserve (){
         try{
             const response = await fetch ("https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/reservations",{
@@ -40,9 +43,10 @@ export default function SingleBook({reservedBooks, setReservedBooks}){
             console.log(error)
         }
     }
+
     return(
         <>
-            {
+            { //Component checks to see if a user is "signed in" before displaying the reserve book option
                 token ?
                 singleBook && 
                 <div className="singleBookCard">

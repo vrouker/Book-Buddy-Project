@@ -4,6 +4,8 @@ export default function Login({setToken}){
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
+
+//Function recall the API the login information and sets the token for the user to use on the other pages
     async function handleSubmit(e){
         e.preventDefault();
         try{
