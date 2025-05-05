@@ -7,7 +7,6 @@ import SingleBook from './components/SingleBook'
 import Register from './components/Register'
 import Login from './components/Login'
 import Account from './components/Account'
-import SearchBar from './components/SearchBar'
 
 
 
@@ -17,8 +16,6 @@ function App() {
   const [allBooks, setAllBooks] = useState([]);
   const [singleBook, setSingleBook] = useState({})
   const [reservedBooks, setReservedBooks] = useState([])
-  const [data, setData] = useState ([allBooks])
-  const [searchResults, setSearchResults] = useState(data)
 
 
 
@@ -36,18 +33,6 @@ function App() {
     }
   }, [])
 
-//Search input does not work....need outside help.
-  const handleSearchInput = (searchTerm)=>{
-    const lowerCaseSearch = searchTerm.toLowerCase();
-    if (searchTerm) {
-      const filteredResults = data.filter((item)=>
-        item.toLowerCase().includes(lowerCaseSearch));
-    setSearchResults(filteredResults);
-    } else {
-      setSearchResults(data)
-    }
-  }
-
 
   return (
     <>
@@ -56,9 +41,6 @@ function App() {
       <Navigations className="navBar" token={token} setToken={setToken}/>
       </div>
 
-      <div>
-        <SearchBar onSearch={handleSearchInput} className="searchBar"/>
-      </div>
 
 
       <div id="routeSection">
